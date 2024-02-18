@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/18 02:09:15 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/18 05:49:34 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 #define MANDELBROT "mandelbrot"
 #define JULIA "julia"
-#define WIDTH 800
-#define HEIGHT 800
+#define WIDTH 1000
+#define HEIGHT 1000
 
 
 // colors
@@ -48,13 +48,14 @@ typedef struct s_img
 	int endian;
 } t_img;
 
+
 typedef struct s_data
 {
     void *mlx_ptr;
     void *win_ptr;
     t_img img;
 	int	iterations;
-	int color;
+	int factor;
 }   t_data;
 
 typedef struct s_complex
@@ -68,7 +69,6 @@ typedef struct s_color
 	int r;
 	int g;
 	int b;
-	int a;
 }	t_color;
 
 void ft_putstr_fd(char *str, int fd);

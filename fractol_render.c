@@ -22,19 +22,27 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
+int calculate_color(t_color *color, int iteration, int factor)
+{
+    color->r = (iteration * factor) % 255;
+    color->g = (iteration * (factor + 10)) % 255;
+    color->b = (iteration  * (factor + 15)) % 255;
+    
+    return create_trgb(0, color->r , color->g, color->b);
+}
 void mandelbot_set(t_data *data, int x, int y)
 {
     t_complex z;
     t_complex c;
+    t_color color;
     double tmpx;
 
 
     int i = 0;
     z.x = 0;
     z.y = 0;
-    c.x = scale(x, -2, 2, 0 , WIDTH);
-    c.y = scale(y , -2, 2, 0, HEIGHT);
-    int color;
+    c.x = scale(x, -2, 0.47, 0 , WIDTH);
+    c.y = scale(y , -1.12, 1.12, 0, HEIGHT);
     while ((z.x * z.x + z.y * z.y) <= 4 && i < data->iterations)
     {
         tmpx = ((z.x * z.x) - (z.y * z.y)) + c.x;
@@ -43,12 +51,11 @@ void mandelbot_set(t_data *data, int x, int y)
         i++;
     }
     if (i == data->iterations)
-        color = 0xFFFFFF;
+        my_mlx_put_pixel(data, x, y, 0x000000);
     else
     {
-        color = data->color * i;
+        my_mlx_put_pixel(data, x, y, calculate_color(&color, i, data->factor));
     }
-    my_mlx_put_pixel(data, x, y, color);
 }
 
 void fractol_render(t_data *data)

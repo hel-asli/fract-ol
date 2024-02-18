@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -O2
+CFLAGS = -Wall -Wextra -Werror
 SRCS = main.c fractol_utils.c fractol_init.c fractol_render.c fractol_color.c
 OBJS = $(SRCS:.c=.o)
 # LIBFT_DIR = libft
