@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:42 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/17 15:45:04 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/18 02:17:35 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void fractol_data_init(t_data *data, char *title)
         mlx_destroy_window(data->mlx_ptr, data->win_ptr);
         exit(EXIT_FAILURE);
     }
-    data->iterations = 1000;
+    data->iterations = 42;
+    data->color = GRAY;
 }

@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:01:18 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/17 16:11:51 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/17 22:32:56y hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ void mandelbot_set(t_data *data, int x, int y)
     t_complex z;
     t_complex c;
     double tmpx;
-    
+
+
     int i = 0;
     z.x = 0;
     z.y = 0;
     c.x = scale(x, -2, 2, 0 , WIDTH);
     c.y = scale(y , -2, 2, 0, HEIGHT);
-
+    int color;
     while ((z.x * z.x + z.y * z.y) <= 4 && i < data->iterations)
     {
         tmpx = ((z.x * z.x) - (z.y * z.y)) + c.x;
@@ -42,9 +43,12 @@ void mandelbot_set(t_data *data, int x, int y)
         i++;
     }
     if (i == data->iterations)
-        my_mlx_put_pixel(data, x, y, 0x000000);
+        color = 0xFFFFFF;
     else
-        my_mlx_put_pixel(data, x, y, scale(i, 0, 0xFFFFFF, 0, data->iterations));
+    {
+        color = data->color * i;
+    }
+    my_mlx_put_pixel(data, x, y, color);
 }
 
 void fractol_render(t_data *data)
