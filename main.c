@@ -6,27 +6,30 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/18 05:57:07 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:54:08 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME"
 
-int key_handler(int keysym, t_data *data)
+int mouse_handler(int button, int x, int y, void *param)
 {
-	if (!data)
+	t_data *data = (t_data *)param;
+	if (!data || !x || !y)
 		return 1;
-	if (keysym == 69)
-	{
-		data->factor += 69;
-		fractol_render(data);
-	}
+	double zoom_factor = 1;;
+	if (button == SCROLL_UP)
+		zoom_factor *= 1.2;
+	else if (button == SCROLL_DOWN)
+		zoom_factor *= 0.8;
+	data->zoom *= zoom_factor;
+	fractol_render(data);
 	return 0;
 }
 void fractol_event_listner(t_data *data)
 {
 	mlx_key_hook(data->win_ptr , key_handler, data);
+	mlx_mouse_hook(data->win_ptr, mouse_handler, data);
 }
 int main (int ac, char **av)
 {

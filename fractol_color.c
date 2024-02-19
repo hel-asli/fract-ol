@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:58:03 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/17 20:50:24 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/19 08:23:02 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,18 @@ void my_mlx_put_pixel(t_data *data, int x, int y, int color)
 
     dst = data->img.addr + (y * data->img.line_length + x * (data->img.bpp / 8));
     *(unsigned int *)dst = color;
+}
+
+int	create_trgb(int t, int r, int g, int b)
+{
+	return (t << 24 | r << 16 | g << 8 | b);
+}
+
+int calculate_color(t_color *color, int iteration, int factor)
+{
+    color->r = (iteration * factor) % 255;
+    color->g = (iteration * (factor + 10)) % 255;
+    color->b = (iteration  * (factor + 15)) % 255;
+    
+    return create_trgb(0, color->r , color->g, color->b);
 }
