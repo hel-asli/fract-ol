@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/19 15:32:12 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/20 03:06:04 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void ft_shift_helper(t_data *data, int keysym);
 void ft_color_change(t_data *data, int keysym);
 void ft_change_instraction(t_data *data, int keysym);
 int key_handler(int keysym, void *param);
+double scale (double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 
 # endif
