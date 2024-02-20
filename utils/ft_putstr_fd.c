@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_utils.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 13:11:32 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 21:28:36 by hel-asli         ###   ########.fr       */
+/*   Created: 2024/02/20 21:28:06 by hel-asli          #+#    #+#             */
+/*   Updated: 2024/02/20 21:28:28 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
-
-
-
-
-
+void ft_putstr_fd(char *str, int fd)
+{
+	if (!str || fd < 0)
+		return ;
+	while (*str)
+		write(fd, str++, 1);
+}

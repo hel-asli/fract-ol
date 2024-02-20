@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_utils.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/17 13:11:32 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 21:28:36 by hel-asli         ###   ########.fr       */
+/*   Created: 2024/02/20 21:27:28 by hel-asli          #+#    #+#             */
+/*   Updated: 2024/02/20 21:29:14 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
+size_t ft_strlen(const char *str)
+{
+	size_t len;
 
-
-
-
-
+	len = 0;
+	while (*str)
+	{
+		len++;
+		str++;
+	}
+	return (len);
+}

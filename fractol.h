@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 05:07:50 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/20 21:43:17 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 // fractols
 
 #define MANDELBROT "mandelbrot"
@@ -103,6 +104,8 @@ void ft_shift_helper(t_data *data, int keysym);
 void ft_color_change(t_data *data, int keysym);
 void ft_change_instraction(t_data *data, int keysym);
 int key_handler(int keysym, void *param);
+int mouse_handler(int button, int x, int y, void *param);
 double scale (double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+int ft_check_args(char *s1, char *s2);
 
 # endif

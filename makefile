@@ -1,6 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = main.c fractol_utils.c fractol_init.c mandelbrot_render.c fractol_event.c fractol_color.c
+SRCS = main.c fractol_utils.c data_init.c mandelbrot_render.c fractol_event.c fractol_color.c \
+		utils/ft_strlen.c utils/ft_putstr_fd.c utils/ft_strncmp.c utils/ft_check_dbl.c
 OBJS = $(SRCS:.c=.o)
 MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 RM = rm -f
@@ -11,10 +12,10 @@ all : $(NAME)
 
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(MLX_FLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $(MLX_FLAGS) $^ -g -o $@
 
 %.o: %.c fractol.h 
-	$(CC) $(CFLAGS) -Imlx -c $<
+	$(CC) $(CFLAGS) -Imlx -c $< -g -o $@
 
 clean :
 	$(RM) $(OBJS)

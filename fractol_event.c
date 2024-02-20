@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 05:11:32 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/20 21:24:54 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,36 @@ int key_handler(int keysym, void *param)
 		ft_shift_helper(data, keysym);
 	if (keysym == 69 || keysym == 78)
 		ft_change_instraction(data, keysym);
+	fractol_render(data);
+	return 0;
+}
+
+void fractol_boundries_calc(t_data *data, double offest_x, double offest_y, double zoom_factor)
+{
+	data->x0 = offest_x + zoom_factor * (data->x0 - offest_x);
+	data->x1 = offest_x + zoom_factor * (data->x1 - offest_x);
+	data->y0 = offest_y + zoom_factor * (data->y0 - offest_y);
+	data->y1 = offest_y + zoom_factor * (data->y1 - offest_y);
+}
+int mouse_handler(int button, int x, int y, void *param)
+{
+	t_data *data = (t_data *)param;
+	if (x < 0 || y < 0)
+		return 1;
+	double zoom_factor;
+
+	zoom_factor = 1;
+	double offest_x = scale(x, data->x0, data->x1, 0, WIDTH);
+	double offest_y = scale(y, data->y0, data->y1, 0, HEIGHT);
+	if (button == SCROLL_UP)
+		zoom_factor = 1.2;
+	else if (button == SCROLL_DOWN)
+		zoom_factor = 0.8;
+
+	fractol_boundries_calc(data, offest_x, offest_y, zoom_factor);
+
+	
+
 	fractol_render(data);
 	return 0;
 }
