@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/19 15:30:28 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:11:32 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 void ft_shift_helper(t_data *data, int keysym)
 {
 	if (keysym == A || keysym == LEFT)
-		data->shift_x -= 0.75;
+		data->shift_x -= 0.15;
 	else if (keysym == S || keysym == DOWN)
-		data->shift_y += 0.75;
+		data->shift_y += 0.15;
 	else if (keysym == D || keysym == RIGHT)
-		data->shift_x += 0.75;
+		data->shift_x += 0.15;
 	else if (keysym == W || keysym == UP)
-		data->shift_y -= 0.75;
+		data->shift_y -= 0.15;
 }
 void ft_color_change(t_data *data, int keysym)
 {

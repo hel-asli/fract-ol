@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 03:06:04 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/20 05:07:50 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <math.h>
-#include "libft/libft.h"
 // fractols
 
 #define MANDELBROT "mandelbrot"
