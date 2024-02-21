@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 21:24:54 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 05:23:17 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,15 @@ int mouse_handler(int button, int x, int y, void *param)
 		zoom_factor = 1.2;
 	else if (button == SCROLL_DOWN)
 		zoom_factor = 0.8;
+	else if ((button == 1 || button == 2) && !ft_strncmp(data->title, JULIA, ft_strlen(JULIA)))
+	{
+		data->x_julia = offest_x;
+		data->y_julia = offest_y;
+	}
 
 	fractol_boundries_calc(data, offest_x, offest_y, zoom_factor);
 
 	
-
 	fractol_render(data);
 	return 0;
 }

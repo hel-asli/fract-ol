@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 22:45:58 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:09:17 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,12 @@ int main (int ac, char **av)
 	}
 	else if (ac == 4 && !ft_strncmp(av[1], JULIA, ft_strlen(JULIA)) && ft_check_args(av[2], av[3]))
 	{
-		printf("%s\n", JULIA); // change the params to double atoidbl
+		data.x_julia = ft_atodbl(av[2]);
+		data.y_julia = ft_atodbl(av[3]);
+		fractol_data_init(&data, av[1]);
+		fractol_render(&data);
+		fractol_event_listner(&data);
+		mlx_loop(data.mlx_ptr);
 	}
 	else
 	{

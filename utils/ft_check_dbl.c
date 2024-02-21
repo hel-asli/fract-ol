@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:34:47 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 02:46:23 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 05:15:47 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int is_double(char *str)
     }
     if (p > 1)
         return 0;
+    if (*str == '-' || *str == '+')
+        str++;
    while (*str)
    {
         if (*str == '.')

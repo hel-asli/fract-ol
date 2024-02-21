@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 02:46:34 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 04:03:22 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ typedef struct s_data
 	double y0;
 	double y1;
 	double zoom;
+	double x_julia;
+	double y_julia;
+	char	*title;
 }   t_data;
 
 typedef struct s_complex
@@ -108,5 +111,6 @@ int mouse_handler(int button, int x, int y, void *param);
 double scale (double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 int ft_check_args(char *s1, char *s2);
 double ft_atodbl(char *str);
+void fractol_julia_render(t_data *data);
 
 # endif
