@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 21:43:17 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 02:46:34 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ int key_handler(int keysym, void *param);
 int mouse_handler(int button, int x, int y, void *param);
 double scale (double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 int ft_check_args(char *s1, char *s2);
+double ft_atodbl(char *str);
 
 # endif
