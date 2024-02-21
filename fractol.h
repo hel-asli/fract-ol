@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 04:03:22 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:48:13 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 #define MANDELBROT "mandelbrot"
 #define JULIA "julia"
+#define BURNINGSHIP "burningship"
 #define WIDTH 1000
 #define HEIGHT 1000
 
@@ -112,5 +113,6 @@ double scale (double unscaled_num, double new_min, double new_max, double old_mi
 int ft_check_args(char *s1, char *s2);
 double ft_atodbl(char *str);
 void fractol_julia_render(t_data *data);
+int mouse_julia(int x, int y, void *param);
 
 # endif

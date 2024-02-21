@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 04:09:17 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 22:03:45 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void fractol_event_listner(t_data *data)
 {
 	mlx_key_hook(data->win_ptr , key_handler, data);
 	mlx_mouse_hook(data->win_ptr, mouse_handler, data);
+	mlx_hook(data->win_ptr, 6, 0, mouse_julia, data);
 }
+
 int main (int ac, char **av)
 {
 	t_data data;
@@ -38,8 +40,14 @@ int main (int ac, char **av)
 		fractol_event_listner(&data);
 		mlx_loop(data.mlx_ptr);
 	}
-	else
+	else if (ac == 2 && !ft_strncmp(av[1], BURNINGSHIP, ft_strlen(BURNINGSHIP)))
 	{
-		ft_putstr_fd(ERROR_MASSAGE, 2);
+		fractol_data_init(&data, av[1]);
+		fractol_render(&data);
+		fractol_event_listner(&data);
+		mlx_loop(data.mlx_ptr);
 	}
+	else
+		ft_putstr_fd(ERROR_MASSAGE, 2);
+	exit(1);
 }

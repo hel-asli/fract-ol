@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 05:23:17 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:48:06 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,22 @@ void fractol_boundries_calc(t_data *data, double offest_x, double offest_y, doub
 	data->x1 = offest_x + zoom_factor * (data->x1 - offest_x);
 	data->y0 = offest_y + zoom_factor * (data->y0 - offest_y);
 	data->y1 = offest_y + zoom_factor * (data->y1 - offest_y);
+}
+
+int mouse_julia(int x, int y, void *param)
+{
+	t_data *data = (t_data *)param;
+	if (x < 0 || y < 0)
+		return 1;
+	double offest_x = scale(x, data->x0, data->x1, 0, WIDTH);
+	double offest_y = scale(y, data->y0, data->y1, 0, HEIGHT);
+
+	data->x_julia = offest_x; 
+	data->y_julia = offest_y;
+
+	fractol_render(data);
+
+	return 1;
 }
 int mouse_handler(int button, int x, int y, void *param)
 {
