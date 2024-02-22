@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:42 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 04:08:57 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/22 02:45:04 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ void fractol_data_init(t_data *data, char *str)
     data->y0 = -2;
     data->y1 = 2;
     data->zoom = 1;
+    data->julia_move = 1;
 }

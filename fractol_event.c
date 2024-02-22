@@ -6,12 +6,11 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 21:48:06 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/22 03:54:09 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
 
 void ft_shift_helper(t_data *data, int keysym)
 {
@@ -32,7 +31,6 @@ void ft_color_change(t_data *data, int keysym)
 		data->factor += 1;
 	else if (keysym == B && data->factor > 1)
 		data->factor -= 1;
-
 }
 void ft_change_instraction(t_data *data, int keysym)
 {
@@ -68,14 +66,16 @@ void fractol_boundries_calc(t_data *data, double offest_x, double offest_y, doub
 int mouse_julia(int x, int y, void *param)
 {
 	t_data *data = (t_data *)param;
-	if (x < 0 || y < 0)
+	if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
 		return 1;
 	double offest_x = scale(x, data->x0, data->x1, 0, WIDTH);
 	double offest_y = scale(y, data->y0, data->y1, 0, HEIGHT);
 
-	data->x_julia = offest_x; 
-	data->y_julia = offest_y;
-
+	if (data->julia_move == 1)
+	{
+		data->x_julia = offest_x;
+		data->y_julia = offest_y;
+	}
 	fractol_render(data);
 
 	return 1;
@@ -94,16 +94,17 @@ int mouse_handler(int button, int x, int y, void *param)
 		zoom_factor = 1.2;
 	else if (button == SCROLL_DOWN)
 		zoom_factor = 0.8;
-	else if ((button == 1 || button == 2) && !ft_strncmp(data->title, JULIA, ft_strlen(JULIA)))
+	if (button == 1 && !ft_strncmp(data->title, JULIA, ft_strlen(JULIA) + 1))
 	{
-		data->x_julia = offest_x;
-		data->y_julia = offest_y;
+		data->julia_move = 0;
+	}
+	else if (button == 2 && !ft_strncmp(data->title, JULIA, ft_strlen(JULIA) + 1))
+	{
+		data->julia_move = 1;
 	}
 
 	fractol_boundries_calc(data, offest_x, offest_y, zoom_factor);
 
-	
 	fractol_render(data);
 	return 0;
 }
-

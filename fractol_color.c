@@ -6,15 +6,15 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:58:03 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/19 08:23:02 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/22 05:13:32 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void my_mlx_put_pixel(t_data *data, int x, int y, int color)
+void    my_mlx_put_pixel(t_data *data, int x, int y, int color)
 {
-    char *dst;
+    char    *dst;
 
     dst = data->img.addr + (y * data->img.line_length + x * (data->img.bpp / 8));
     *(unsigned int *)dst = color;

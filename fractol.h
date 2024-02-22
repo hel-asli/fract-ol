@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:09:33 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/21 21:48:13 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/22 02:44:01 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ typedef struct s_data
 	double x_julia;
 	double y_julia;
 	char	*title;
+	int julia_move;
 }   t_data;
 
 typedef struct s_complex
