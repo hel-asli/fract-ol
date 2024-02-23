@@ -12,12 +12,13 @@
 
 #include "fractol.h"
 
-void    my_mlx_put_pixel(t_data *data, int x, int y, int color)
+void	my_mlx_put_pixel(t_data *data, int x, int y, int color)
 {
-    char    *dst;
+	char	*dst;
 
-    dst = data->img.addr + (y * data->img.line_length + x * (data->img.bpp / 8));
-    *(unsigned int *)dst = color;
+	dst = data->img.addr + (y * data->img.line_length
+			+ x * (data->img.bpp / 8));
+	*(unsigned int *)dst = color;
 }
 
 int	create_trgb(int t, int r, int g, int b)
@@ -25,11 +26,10 @@ int	create_trgb(int t, int r, int g, int b)
 	return (t << 24 | r << 16 | g << 8 | b);
 }
 
-int calculate_color(t_color *color, int iteration, int factor)
+int	calculate_color(t_color *color, int iteration, int factor)
 {
-    color->r = (iteration * factor) % 255;
-    color->g = (iteration * (factor + 10)) % 255;
-    color->b = (iteration  * (factor + 15)) % 255;
-    
-    return create_trgb(0, color->r , color->g, color->b);
+	color->r = (iteration * factor) % 255;
+	color->g = (iteration * (factor + 10)) % 255;
+	color->b = (iteration * (factor + 15)) % 255;
+	return (create_trgb(0, color->r, color->g, color->b));
 }

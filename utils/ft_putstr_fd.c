@@ -12,7 +12,7 @@
 
 #include "../fractol.h"
 
-void ft_putstr_fd(char *str, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
 	if (!str || fd < 0)
 		return ;
