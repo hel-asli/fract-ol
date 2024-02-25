@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:42 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/23 01:45:04 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/24 23:48:33 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	error_handler(t_data *data)
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->img.img);
 	free(data->mlx_ptr);
+	free(data->title);
 	exit(EXIT_FAILURE);
 }
 

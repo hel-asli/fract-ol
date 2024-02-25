@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 01:58:54 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/23 01:59:05 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/25 00:10:25 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_close_window(t_data *data)
 {
-	mlx_destroy_image(data->mlx_ptr, data->img.img);
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	free(data->mlx_ptr);
+	if (!data)
+		return ;
+	// mlx_destroy_image(data->mlx_ptr, data->img.img);
+	// mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	// free(data->mlx_ptr);
+	// free(data->title);
 	exit(EXIT_SUCCESS);
 }
 

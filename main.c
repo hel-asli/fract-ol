@@ -6,11 +6,16 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/23 03:56:29 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/02/24 23:56:23 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+void	foo()
+{
+	system("leaks fractol");
+}
 
 void	fractol_event_listner(t_data *data)
 {
@@ -30,6 +35,7 @@ void	fractol_helper(t_data *data, char **av)
 
 int	main(int ac, char **av)
 {
+	atexit(foo);
 	t_data	data;
 
 	if (ac == 2 && !ft_strncmp(av[1], MANDELBROT, ft_strlen(MANDELBROT)))
@@ -45,5 +51,4 @@ int	main(int ac, char **av)
 		fractol_helper(&data, av);
 	else
 		ft_putstr_fd(ERROR_MASSAGE, 2);
-	exit(1);
 }
