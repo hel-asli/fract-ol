@@ -6,32 +6,12 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:42 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/24 23:48:33 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:11:58 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	len_src;
-	size_t	i;
-
-	len_src = ft_strlen(src);
-	i = 0;
-	if (dstsize == 0)
-	{
-		return (len_src);
-	}
-	i = 0;
-	while (src[i] != '\0' && i < dstsize - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (len_src);
-}
 
 void	ft_intialize_data(t_data *data)
 {
@@ -58,12 +38,10 @@ void	error_handler(t_data *data)
 
 void	fractol_data_init(t_data *data, char *str)
 {
-	if (!data)
-		exit(EXIT_FAILURE);
-	data->title = malloc(ft_strlen(str) + 1);
-	if (data->title == NULL)
+	data->title = str;
+	if (!data->title)
 		return ;
-	ft_strlcpy(data->title, str, ft_strlen(str) + 1);
+		
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
 		exit(EXIT_FAILURE);

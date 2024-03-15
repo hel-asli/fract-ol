@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:01:18 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/23 02:52:35 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:05:39 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	fractol_render(t_data *data)
 	int	y;
 
 	x = 0;
+
 	while (x < WIDTH)
 	{
 		y = 0;

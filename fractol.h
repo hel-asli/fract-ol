@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/24 04:31:43 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:12:53 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define WIDTH 500
 # define HEIGHT 500
 // colors
+#define malloc(x) NULL
 # define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME\n\
 	./fractolt mandelbrot\n./fractol julia real imag\n"
 # define BLACK       0x000000
@@ -103,7 +104,6 @@ int		key_handler(int keysym, void *param);
 int		mouse_handler(int button, int x, int y, void *param);
 int		ft_check_args(char *s1, char *s2);
 double	ft_atodbl(char *str);
-void	fractol_julia_render(t_data *data);
 int		mouse_julia(int x, int y, void *param);
 void	ft_close_window(t_data *data);
 double	scale(double unscaled_num, double new_min,
