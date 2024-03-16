@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/15 00:12:53 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/16 00:29:43 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
 # define BURNINGSHIP "burningship"
-# define WIDTH 500
-# define HEIGHT 500
+# define WIDTH 800
+# define HEIGHT 800
 // colors
 #define malloc(x) NULL
 # define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME\n\
