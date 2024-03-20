@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/16 00:29:35 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/19 21:22:50 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	fractol_boundries_calc(t_data *data, double offest_x,
 		double offest_y, double zoom_factor)
 {
-	data->x0 = offest_x + zoom_factor * (data->x0 - offest_x);
+	double dx = data->x0 - offest_x;
+	double dy = data->y0 - offest_y;
+	data->x0 = offest_x + zoom_factor * dx;
 	data->x1 = offest_x + zoom_factor * (data->x1 - offest_x);
-	data->y0 = offest_y + zoom_factor * (data->y0 - offest_y);
+	data->y0 = offest_y + zoom_factor * dy;
 	data->y1 = offest_y + zoom_factor * (data->y1 - offest_y);
 }
 
