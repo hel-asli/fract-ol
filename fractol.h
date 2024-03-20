@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/16 21:53:23 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/16 22:31:11 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,9 @@
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
 # define BURNINGSHIP "burningship"
-#ifndef WIDTH
-# define WIDTH 800
-#endif
-#ifndef HEIGHT
-# define HEIGHT 800
-#endif
+# define WIDTH 500
+
+# define HEIGHT 500
 
 // colors
 #define malloc(x) NULL
