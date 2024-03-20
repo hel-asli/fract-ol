@@ -15,15 +15,19 @@
 void	fractol_boundries_calc(t_data *data, double offest_x,
 		double offest_y, double zoom_factor)
 {
-	double	dx;
-	double	dy;
+	double	dx_min;
+	double	dx_max;
+	double	dy_min;
+	double	dy_max;
 
-	dx = data->x0 - offest_x;
-	dy = data->y0 - offest_y;
-	data->x0 = offest_x + zoom_factor * dx;
-	data->x1 = offest_x + zoom_factor * (data->x1 - offest_x);
-	data->y0 = offest_y + zoom_factor * dy;
-	data->y1 = offest_y + zoom_factor * (data->y1 - offest_y);
+	dx_min = data->x0 - offest_x;
+	dx_max = data->x1 - offest_x;
+	dy_min = data->y0 - offest_y;
+	dy_max = data->y1 - offest_y;
+	data->x0 = offest_x + (dx_min * zoom_factor);
+	data->x1 = offest_x + (dx_max * zoom_factor);
+	data->y0 = offest_y + (dy_min * zoom_factor);
+	data->y1 = offest_y + (dy_max * zoom_factor);
 }
 
 int	mouse_julia(int x, int y, void *param)
