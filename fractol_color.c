@@ -21,10 +21,13 @@ void	my_mlx_put_pixel(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-double	scale(double unscaled_num
+double	scale(double num
 		, double new_min, double new_max, double old_max)
 {
-	return ((new_max - new_min) * (unscaled_num - 0) / (old_max - 0) + new_min);
+	double	new_range;
+
+	new_range = new_max - new_min;
+	return (new_range * num / old_max + new_min);
 }
 
 int	create_trgb(int t, int r, int g, int b)
