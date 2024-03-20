@@ -96,7 +96,6 @@ void	fractol_render(t_data *data)
 	int	y;
 
 	x = 0;
-
 	while (x < WIDTH)
 	{
 		y = 0;

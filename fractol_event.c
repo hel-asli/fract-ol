@@ -15,8 +15,11 @@
 void	fractol_boundries_calc(t_data *data, double offest_x,
 		double offest_y, double zoom_factor)
 {
-	double dx = data->x0 - offest_x;
-	double dy = data->y0 - offest_y;
+	double	dx;
+	double	dy;
+
+	dx = data->x0 - offest_x;
+	dy = data->y0 - offest_y;
 	data->x0 = offest_x + zoom_factor * dx;
 	data->x1 = offest_x + zoom_factor * (data->x1 - offest_x);
 	data->y0 = offest_y + zoom_factor * dy;

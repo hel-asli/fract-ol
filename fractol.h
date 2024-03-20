@@ -28,7 +28,6 @@
 # define HEIGHT 500
 
 // colors
-#define malloc(x) NULL
 # define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME\n\
 	./fractolt mandelbrot\n./fractol julia real imag\n"
 # define BLACK       0x000000

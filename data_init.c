@@ -12,7 +12,6 @@
 
 #include "fractol.h"
 
-
 void	ft_intialize_data(t_data *data)
 {
 	data->iterations = 50;
@@ -41,7 +40,6 @@ void	fractol_data_init(t_data *data, char *str)
 	data->title = str;
 	if (!data->title)
 		return ;
-		
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
 		exit(EXIT_FAILURE);
