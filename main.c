@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/16 00:27:52 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/21 05:24:06 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_demantion(int width, int height)
 {
-	return (width > 0 && height > 0 && width <= 5120 && height <= 2880);
+	return (width > 0 && height > 0 && width <= 2000 && height <= 1500);
 }
 
 int	destroy_helper(void *param)

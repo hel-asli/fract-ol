@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/16 22:31:11 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/21 05:41:12 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
 # define BURNINGSHIP "burningship"
-# define WIDTH 500
+# define WIDTH 800
 
-# define HEIGHT 500
+# define HEIGHT 800
 
 // colors
 # define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME\n\
@@ -96,7 +96,7 @@ void	fractol_data_init(t_data *data, char *title);
 void	fractol_render(t_data *data);
 void	my_mlx_put_pixel(t_data *data, int x, int y, int color);
 void	mandelbot_set(t_data *data, int x, int y);
-int		create_trgb(int t, int r, int g, int b);
+int		rgb(int t, int r, int g, int b);
 int		calculate_color(t_color *color, int iteration, int factor);
 void	ft_shift_helper(t_data *data, int keysym);
 void	ft_color_change(t_data *data, int keysym);
@@ -107,7 +107,7 @@ int		ft_check_args(char *s1, char *s2);
 double	ft_atodbl(char *str);
 int		mouse_julia(int x, int y, void *param);
 void	ft_close_window(t_data *data);
-double	scale(double unscaled_num, double new_min,
+double	scale_range(double unscaled_num, double new_min,
 			double new_max, double old_max);
 
 #endif

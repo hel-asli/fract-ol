@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/19 21:22:50 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/21 05:42:04 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	mouse_julia(int x, int y, void *param)
 	data = (t_data *)param;
 	if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
 		return (1);
-	offset_x = scale(x, data->x0, data->x1, WIDTH);
-	offset_y = scale(y, data->y0, data->y1, HEIGHT);
+	offset_x = scale_range(x, data->x0, data->x1, WIDTH);
+	offset_y = scale_range(y, data->y0, data->y1, HEIGHT);
 	if (data->julia_move == 1)
 	{
 		data->x_julia = offset_x;
@@ -61,8 +61,8 @@ int	mouse_handler(int button, int x, int y, void *param)
 	if (x < 0 || y < 0)
 		return (1);
 	zoom_factor = 1;
-	offset_x = scale(x, data->x0, data->x1, WIDTH);
-	offset_y = scale(y, data->y0, data->y1, HEIGHT);
+	offset_x = scale_range(x, data->x0, data->x1, WIDTH);
+	offset_y = scale_range(y, data->y0, data->y1, HEIGHT);
 	if (button == SCROLL_UP)
 		zoom_factor = 1.2;
 	else if (button == SCROLL_DOWN)

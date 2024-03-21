@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:58:03 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/15 00:12:38 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/21 05:40:18 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	my_mlx_put_pixel(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-double	scale(double num
+double	scale_range(double num
 		, double new_min, double new_max, double old_max)
 {
 	double	new_range;
@@ -30,9 +30,9 @@ double	scale(double num
 	return (new_range * num / old_max + new_min);
 }
 
-int	create_trgb(int t, int r, int g, int b)
+int	rgb(int r, int g, int b)
 {
-	return (t << 24 | r << 16 | g << 8 | b);
+	return (r << 16 | g << 8 | b);
 }
 
 int	calculate_color(t_color *color, int iteration, int factor)
@@ -40,5 +40,5 @@ int	calculate_color(t_color *color, int iteration, int factor)
 	color->r = (iteration * factor) % 255;
 	color->g = (iteration * (factor + 10)) % 255;
 	color->b = (iteration * (factor + 15)) % 255;
-	return (create_trgb(0, color->r, color->g, color->b));
+	return (rgb(color->r, color->g, color->b));
 }
