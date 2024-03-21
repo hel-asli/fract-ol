@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:01:18 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/21 05:43:12 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/21 05:53:26 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ void	julia_render(t_data *data, int x, int y)
 	i = 0;
 	c.x = data->x_julia;
 	c.y = data->y_julia;
-	z.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom) + data->shift_x;
-	z.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom) + data->shift_y;
+	z.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom)
+		+ data->shift_x;
+	z.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom)
+		+ data->shift_y;
 	while ((z.x * z.x + z.y * z.y) <= 4 && i < data->iterations)
 	{
 		tmpx = ((z.x * z.x) - (z.y * z.y)) + c.x;
@@ -49,8 +51,10 @@ void	burningship_set(t_data *data, int x, int y)
 	z.x = 0;
 	z.y = 0;
 	i = 0;
-	c.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom) + data->shift_x;
-	c.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom) + data->shift_y;
+	c.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom)
+		+ data->shift_x;
+	c.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom)
+		+ data->shift_y;
 	while ((z.x * z.x + z.y * z.y) <= 4 && i < data->iterations)
 	{
 		tmpx = ((z.x * z.x) - (z.y * z.y)) + c.x;
@@ -75,8 +79,10 @@ void	mandelbot_set(t_data *data, int x, int y)
 	z.x = 0;
 	z.y = 0;
 	i = 0;
-	c.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom) + data->shift_x;
-	c.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom) + data->shift_y;
+	c.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom)
+		+ data->shift_x;
+	c.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom)
+		+ data->shift_y;
 	while ((z.x * z.x + z.y * z.y) <= 4 && i < data->iterations)
 	{
 		tmpx = ((z.x * z.x) - (z.y * z.y)) + c.x;

@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/21 05:41:12 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/21 05:47:16 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	fractol_data_init(t_data *data, char *title);
 void	fractol_render(t_data *data);
 void	my_mlx_put_pixel(t_data *data, int x, int y, int color);
 void	mandelbot_set(t_data *data, int x, int y);
-int		rgb(int t, int r, int g, int b);
+int		rgb(int r, int g, int b);
 int		calculate_color(t_color *color, int iteration, int factor);
 void	ft_shift_helper(t_data *data, int keysym);
 void	ft_color_change(t_data *data, int keysym);
