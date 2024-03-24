@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/21 06:49:54 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/24 20:53:49 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ int	main(int ac, char **av)
 		&& check_demantion(WIDTH, HEIGHT))
 		fractol_helper(&data, av);
 	else
+	{
 		ft_putstr_fd(ERROR_MASSAGE, 2);
+		exit(EXIT_FAILURE);
+	}
 }

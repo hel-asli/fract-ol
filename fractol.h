@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/21 05:47:16 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/24 06:20:41 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 # define HEIGHT 800
 
 // colors
-# define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME\n\
-	./fractolt mandelbrot\n./fractol julia real imag\n"
+# define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME  :\n\
+./fractolt mandelbrot\n./fractol julia real imag\n./fractol burningship\n"
 # define BLACK       0x000000
 # define WHITE       0xFFFFFF
 # define UP 126
