@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:27:43 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:52:51 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 # include <mlx.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <math.h>
-# include <stdbool.h>
 
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
@@ -31,7 +29,6 @@
 # define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME  :\n\
 ./fractolt mandelbrot\n./fractol julia real imag\n./fractol burningship\n"
 # define BLACK       0x000000
-# define WHITE       0xFFFFFF
 # define UP 126
 # define DOWN 125
 # define LEFT 123
@@ -106,7 +103,7 @@ int		mouse_handler(int button, int x, int y, void *param);
 int		ft_check_args(char *s1, char *s2);
 double	ft_atodbl(char *str);
 int		mouse_julia(int x, int y, void *param);
-void	ft_close_window(void);
+void	ft_close_window(t_data *data);
 double	scale_range(double unscaled_num, double new_min,
 			double new_max, double old_max);
 

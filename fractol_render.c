@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:01:18 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:33:23 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 05:28:43 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	julia_render(t_data *data, int x, int y)
 		i++;
 	}
 	if (i == data->iterations)
-		my_mlx_put_pixel(data, x, y, 0x000000);
+		my_mlx_put_pixel(data, x, y, BLACK);
 	else
 		my_mlx_put_pixel(data, x, y, calculate_color(&color, i, data->factor));
 }
@@ -63,7 +63,7 @@ void	burningship_set(t_data *data, int x, int y)
 		i++;
 	}
 	if (i == data->iterations)
-		my_mlx_put_pixel(data, x, y, 0x000000);
+		my_mlx_put_pixel(data, x, y, BLACK);
 	else
 		my_mlx_put_pixel(data, x, y, calculate_color(&color, i, data->factor));
 }
@@ -91,7 +91,7 @@ void	mandelbot_set(t_data *data, int x, int y)
 		i++;
 	}
 	if (i == data->iterations)
-		my_mlx_put_pixel(data, x, y, 0x000000);
+		my_mlx_put_pixel(data, x, y, BLACK);
 	else
 		my_mlx_put_pixel(data, x, y, calculate_color(&color, i, data->factor));
 }

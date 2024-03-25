@@ -6,14 +6,16 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 01:58:54 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:40:05 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 05:05:48 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_close_window(void)
+void	ft_close_window(t_data *data)
 {
+	mlx_destroy_image(data->mlx_ptr, data->img.img);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	exit(EXIT_SUCCESS);
 }
 
@@ -62,7 +64,7 @@ int	key_handler(int keysym, void *param)
 	if (keysym == 69 || keysym == 78)
 		ft_change_instraction(data, keysym);
 	if (keysym == ESC)
-		ft_close_window();
+		ft_close_window(data);
 	fractol_render(data);
 	return (0);
 }

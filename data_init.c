@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:39:42 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:33:44 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:51:36 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,24 @@ void	fractol_data_init(t_data *data, char *str)
 		return ;
 	data->mlx_ptr = mlx_init();
 	if (!data->mlx_ptr)
+	{
+		ft_putstr_fd("error init\n", 2);
 		exit(EXIT_FAILURE);
+	}
 	data->win_ptr = mlx_new_window(data->mlx_ptr, WIDTH, HEIGHT, data->title);
 	if (!data->win_ptr)
+	{
+		ft_putstr_fd("error open window\n", 2);
 		exit(EXIT_FAILURE);
+	}
 	data->img.img = mlx_new_image(data->mlx_ptr, WIDTH, HEIGHT);
 	if (!data->img.img)
+	{
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		ft_putstr_fd("error opening image\n", 2);
 		exit(EXIT_FAILURE);
+	}
 	data->img.addr = mlx_get_data_addr(data->img.img, &data->img.bpp,
 			&data->img.line_length, &data->img.endian);
-	if (!data->img.addr)
-		exit(EXIT_FAILURE);
 	ft_intialize_data(data);
 }

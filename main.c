@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:53:08 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:38:14 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	destroy_helper(void *param)
 	data = (t_data *)param;
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	mlx_destroy_image(data->mlx_ptr, data->img.img);
-	exit(1);
+	exit(EXIT_SUCCESS);
+	return (0);
 }
 
 void	fractol_event_listner(t_data *data)
