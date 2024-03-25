@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:01:18 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/24 03:08:49 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:12:04 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	mandelbot_set(t_data *data, int x, int y)
 	z.x = 0;
 	z.y = 0;
 	i = 0;
-	y *= -1;
 	c.x = (scale_range(x, data->x0, data->x1, WIDTH) * data->zoom)
 		+ data->shift_x;
 	c.y = (scale_range(y, data->y0, data->y1, HEIGHT) * data->zoom)
