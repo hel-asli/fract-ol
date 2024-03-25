@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:01:18 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/24 21:12:04 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 00:33:23 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,12 +107,11 @@ void	fractol_render(t_data *data)
 		y = 0;
 		while (y < HEIGHT)
 		{
-			if (ft_strncmp(data->title, MANDELBROT, ft_strlen(MANDELBROT)) == 0)
+			if (ft_strcmp(data->title, MANDELBROT) == 0)
 				mandelbot_set(data, x, y);
-			else if (ft_strncmp(data->title, JULIA, ft_strlen(JULIA)) == 0)
+			else if (ft_strcmp(data->title, JULIA) == 0)
 				julia_render(data, x, y);
-			else if (!ft_strncmp(data->title, BURNINGSHIP,
-					ft_strlen(BURNINGSHIP)))
+			else if (!ft_strcmp(data->title, BURNINGSHIP))
 				burningship_set(data, x, y);
 			y++;
 		}

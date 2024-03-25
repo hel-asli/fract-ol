@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:17:59 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 00:27:43 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ typedef struct s_color
 }	t_color;
 
 void	ft_putstr_fd(char *str, int fd);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 size_t	ft_strlen(const char *str);
 void	fractol_data_init(t_data *data, char *title);
 void	fractol_render(t_data *data);

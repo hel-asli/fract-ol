@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:28:40 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/02/20 21:28:58 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/25 00:27:50 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	if (!s1 || !s2)
 		return (0);
-	while ((*s1 || *s2) && *s1 == *s2 && n >= 0)
+	while (*s1 && *s1 == *s2)
 	{
 		s1++;
 		s2++;
-		n--;
 	}
 	return (*s1 - *s2);
 }
