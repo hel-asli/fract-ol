@@ -6,13 +6,13 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 02:24:38 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 22:52:51 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/26 18:06:37 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
-// includes
+
 # include <mlx.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,10 +22,7 @@
 # define JULIA "julia"
 # define BURNINGSHIP "burningship"
 # define WIDTH 800
-
 # define HEIGHT 800
-
-// colors
 # define ERROR_MASSAGE "ENTER A VALIDE FRACTOL NAME  :\n\
 ./fractolt mandelbrot\n./fractol julia real imag\n./fractol burningship\n"
 # define BLACK       0x000000

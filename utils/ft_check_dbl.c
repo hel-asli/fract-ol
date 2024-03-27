@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:34:47 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/24 23:52:48 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/27 01:44:14 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	is_double(char *str)
 	int		p;
 
 	p = point_count(str);
-	if (p > 1)
+	if (*str == '.' || p > 1)
 		return (0);
 	while ((*str >= 8 && *str <= 13) || *str == 32)
 		str++;

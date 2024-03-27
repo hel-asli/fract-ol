@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 13:02:44 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 22:38:14 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:58:08 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,21 @@ int	main(int ac, char **av)
 {
 	t_data	data;
 
-	if (ac == 2 && !ft_strcmp(av[1], MANDELBROT)
-		&& check_demantion(WIDTH, HEIGHT))
+	if (!check_demantion(WIDTH, HEIGHT))
+	{
+		ft_putstr_fd("WIDTH && HEIGHT need to be greater than 0\n", 2);
+		exit(EXIT_FAILURE);
+	}
+	if (ac == 2 && !ft_strcmp(av[1], MANDELBROT))
 		fractol_helper(&data, av);
 	else if (ac == 4 && !ft_strcmp(av[1], JULIA)
-		&& check_demantion(WIDTH, HEIGHT) && ft_check_args(av[2], av[3]))
+		&& ft_check_args(av[2], av[3]))
 	{
 		data.x_julia = ft_atodbl(av[2]);
 		data.y_julia = ft_atodbl(av[3]);
 		fractol_helper(&data, av);
 	}
-	else if (ac == 2 && !ft_strcmp(av[1], BURNINGSHIP)
-		&& check_demantion(WIDTH, HEIGHT))
+	else if (ac == 2 && !ft_strcmp(av[1], BURNINGSHIP))
 		fractol_helper(&data, av);
 	else
 	{

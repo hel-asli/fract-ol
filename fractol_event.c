@@ -6,7 +6,7 @@
 /*   By: hel-asli <hel-asli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:02:16 by hel-asli          #+#    #+#             */
-/*   Updated: 2024/03/25 00:32:25 by hel-asli         ###   ########.fr       */
+/*   Updated: 2024/03/26 18:11:07 by hel-asli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	mouse_julia(int x, int y, void *param)
 		data->y_julia = offset_y;
 	}
 	fractol_render(data);
-	return (1);
+	return (0);
 }
 
 int	mouse_handler(int button, int x, int y, void *param)
